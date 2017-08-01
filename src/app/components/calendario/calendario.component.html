@@ -1,0 +1,26 @@
+<section class="calendar">
+  <header>
+    <span class="pull-left"><i class="fa fa-chevron-left" aria-hidden="true" (click)="setPreviousMonth()"></i></span>
+    <span class="pull-right"><i class="fa fa-chevron-right" aria-hidden="true" (click)="setNextMonth()"></i></span>
+    <h1>{{ date_formatted.format('MMMM') }} {{ date_formatted.format('YYYY') }}</h1>
+  </header>
+  <article class="">
+    <div class="days">
+      <b>DOM</b>
+      <b>SEG</b>
+      <b>TER</b>
+      <b>QUA</b>
+      <b>QUI</b>
+      <b>SEX</b>
+      <b>SAB</b>
+    </div>
+    <div class="dates">
+    	<span *ngFor="let date of dates; let i = index" 
+    		(click)="changeDate(date)" 
+    		[ngClass]="{ 'active': date.active, 'disable': date.disable, 'selected': date.selected }">
+
+    		{{ date.dia }}
+    	</span>
+    </div>
+  </article>
+</section>

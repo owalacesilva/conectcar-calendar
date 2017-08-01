@@ -1,0 +1,85 @@
+.calendar {
+	overflow: hidden;
+	display: block;
+	width: 300px; 
+	height: auto;
+	margin: 0px auto;
+	background: #fff;
+	border: solid 1px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+
+	::selection {
+		background: rgba(0,0,0,.05);
+	}
+
+	h1 {
+		font: 700 18px 'Open Sans';
+		color: #9E9E9E;
+	}
+
+	header {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		box-shadow: inset 0 -1px 0 rgba(0,0,0,.2);
+		line-height: 2;
+
+		h1 {
+			margin: 0px;
+			text-align: center;
+		}
+		nav span {
+			cursor: pointer;
+			display: block;
+			float: left;
+			width: 11px; height: 20px;
+			margin-left: 30px;
+		}
+	}
+
+	article {
+		padding: 0px;
+		margin-bottom: 10px;
+
+		b,
+		span {
+			display: block;
+			float: left;
+		  width: 14.28%;
+		  height: auto;
+		  padding: 4px;
+			text-align: center;
+		}
+		b {
+			font: 600 13px/2.6 'Open Sans';
+			color: #607D8B;
+		}
+		span {
+			font: 700 13px/2.6 'Open Sans';
+			color: #4c6977;
+			border-radius: 100%;
+			cursor: pointer;
+		}
+		span.disable {
+			color: #b6bacc;
+			box-shadow: inset 0 0 1px 1px #f3f4f7;
+		}
+		span:not(.disable):hover {
+			background: #cdd0dd;
+			box-shadow:inset 0 0 1px 1px #d9dce5, 0 1px 3px -1px #cdd0dd;
+		}
+		span:not(.disable).selected {
+			background: #b9becf;
+			box-shadow:
+			inset 0 1px 2px rgba(0,0,0,.18),
+			0 0 0 #cdd0dd;
+		}
+		span.active,
+		span.active:hover,
+		span.active:active {
+			color: #ff8263;
+			box-shadow: inset 0 0 1px 1px #ff8263, 0 1px 3px -1px #ff8263;
+			background: none;
+		}
+	}
+}
